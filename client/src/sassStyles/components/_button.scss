@@ -1,0 +1,71 @@
+.button{
+    
+    &-login{
+        box-shadow: $box-shadow-1;
+        width: 80%;
+        height: 15%;
+        font-size: 2em !important;
+        border-radius: 20em !important;
+        margin-top: 4em !important;
+        color: black !important;
+        font-weight: 500 !important;
+        padding: 1em;
+        background-color: $home-button-color
+    }
+
+
+    &-home{
+        width: 20em;
+        height: 3em;
+     
+        text-align: center;
+        margin-top: .5em !important;
+        box-shadow: none;
+        cursor: pointer;
+        font-size: 1.5em !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $home-button-color;
+        border-radius: 20em !important;
+        padding: 1em;
+        color: black !important;
+        box-shadow: $box-shadow-1;
+
+
+        @media screen and (max-width: 1048px) {
+            
+            width: 100%;
+            
+            
+        }
+        @media screen and (max-width: 576px) {
+            
+            width: 100%;
+            
+        }
+
+        
+    }
+
+    &-logout{
+
+        position: absolute; 
+        bottom: 2em; 
+        right: 3em;
+        cursor: pointer;
+        transition: transform .1s ease-out;
+
+        
+    }
+
+    &-logout:hover{
+
+        transform: scale(1.2);
+
+    }
+
+    
+}
+
+
