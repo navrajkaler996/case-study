@@ -48,5 +48,32 @@
         }
     }
 
+    &-image{
+        height: 8em;
+        width: 8em;
+        position: absolute;
+        top: 1.5em;
+        left: 4em;
+        box-shadow: $box-shadow-1;
+
+        
+        @media screen and (max-width: 1048px) {
+            top: 1.5em;
+        left: .5em;
+            
+        }
+
+        @media screen and (max-width: 650px) {
+            display: none;
+            
+        }
+        
+    }
+
+    &-firstRow{
+
+       
+    }
+
 
 }

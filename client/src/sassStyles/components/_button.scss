@@ -56,6 +56,21 @@
         cursor: pointer;
         transition: transform .1s ease-out;
 
+        @media screen and (max-width: 1048px) {
+            
+           
+            bottom: 1em;
+            right: 2em;
+            
+        }
+        @media screen and (max-width: 576px) {
+            
+            bottom: 0.5em;
+            right: 0.5em;
+            
+            
+        }
+
         
     }
 

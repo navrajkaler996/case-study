@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/Image'
 import axios from 'axios'
 import ReusableTable from "../components/Table"
+import Profile  from './Profile';
 import {COLUMNS_REPOS, COLUMNS_ACTIVITIES} from "../utilities/helper";  
 
 const Home = () => {
@@ -22,8 +24,10 @@ const Home = () => {
 
   const {userData} = useSelector(state => state)
 
-
+  //function to get the repos
   const getRepos =  async () => {
+
+    console.log(userData)
 
     if(error) setError(false)
     setLoader(true)
@@ -44,8 +48,8 @@ const Home = () => {
   }
 
   
-  console.log("home")
-
+  
+  //function to get the activities
   const getActivity = async () => {
     if(error) setError(false)
     setLoader(true)
@@ -62,6 +66,8 @@ const Home = () => {
     setLoader(false)
 
   }
+
+  
   const logoutHandler = () => {
 
     dispatch({type: "LOGOUT"})
@@ -77,8 +83,12 @@ const Home = () => {
         <Col md={10} sm={12}>
 
           <Card className='home'>
-            
+            <div className='d-flex justify-content-center align-items-center home-firstRow'>
+
+              <Image src={userData.avatar_url} roundedCircle={true} className="home-image" />
+
             <h1 className="heading-welcome">Welcome, {userData && userData.login}</h1>
+            </div>
 
             <Card.Body className='home-buttons'>
               <span className='button button-home mr-4' onClick={getRepos}>Repositries</span>

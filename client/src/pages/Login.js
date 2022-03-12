@@ -16,6 +16,10 @@ const Login = (props) => {
   const {clientId, clientSecret, redirectURL} = useSelector(state => state)
 
   useEffect(()=> {
+    //if the user is authenticated from github,
+    //then it will return to /login with a code
+    //if code is their, then we can use it to
+    //authentication and get user details
     if(window.location.href.includes("code")){
       setLoader(true)
       const code = window.location.href.split("?code=")[1]
@@ -29,6 +33,7 @@ const Login = (props) => {
     
     try{
       const data = await axios.post("http://localhost:4000/auth", {code: code, clientId: clientId, clientSecret: clientSecret, redirectURL:  redirectURL})
+      //dispatching actions with user data and code
       dispatch({type: "LOGIN", payload: {userData: data.data, code: code}})
       navigate("/home")
    
@@ -53,8 +58,8 @@ const Login = (props) => {
             {loader && <h3 className='center-2'>Loading....</h3> }
           
           {!loader && !error &&  <Card.Body className='d-flex flex-column align-items-center'>
-              <h2 className='mt-4'>Welcome to ManageGit</h2>
-              <h3 className='mt-4 p-4'>The best place to manage your Git repositries and activities</h3>
+              <h2 className='mt-4 center-2'>Welcome to ManageGit</h2>
+              <h3 className='mt-4 p-4 center-2'>The best place to manage your Git repositries and activities</h3>
               
              <a href={`https://github.com/login/oauth/authorize?scope=user&client_id=${clientId}&redirect_uri=${redirectURL}`} style={{marginTop: "7em", textDecoration: "none"}} >
                
