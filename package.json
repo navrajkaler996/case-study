@@ -6,7 +6,10 @@
   "scripts": {
     "server": "nodemon server/server",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server-install": "cd server && npm install",
+    "client-install": "cd client && npm install",
+    "install-all": "concurrently \"npm run server-install\" \"npm run client-install\""
   },
   "author": "Navraj Kaler",
   "license": "ISC",
