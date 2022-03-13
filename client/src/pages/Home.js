@@ -1,4 +1,4 @@
-import React, {useEffect, useState ,useCallback} from 'react'
+import React, {useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import Card from 'react-bootstrap/Card'
@@ -7,7 +7,6 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import axios from 'axios'
 import ReusableTable from "../components/Table"
-import Profile  from './Profile';
 import {COLUMNS_REPOS, COLUMNS_ACTIVITIES} from "../utilities/helper";  
 
 const Home = () => {
