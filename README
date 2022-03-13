@@ -1,0 +1,6 @@
+After clonning the repo, run the following commands in the root folder:
+npm i
+npm run install-all
+
+To run the project, run the following command in the root folder:
+npm run dev
