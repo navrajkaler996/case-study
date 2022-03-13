@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { useTable, usePagination } from "react-table";
 import Table from "react-bootstrap/Table"
 import Button from "react-bootstrap/Button"
@@ -29,7 +29,7 @@ const ReusableTable = ({ columns, data }) => {
     usePagination
   );
 
-  const { pageIndex, pageSize} = state;
+  const { pageIndex} = state;
 
   return (
  
